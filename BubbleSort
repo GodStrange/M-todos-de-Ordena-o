@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <time.h>
+ 
+
+int main()
+ {
+ setlocale(LC_ALL, "Portuguese"); 
+ 
+ int vetor [1000];
+ int i,j,x;
+ 
+ srand(time(NULL));
+ 
+ for (i = 0; i < 1000; i++)
+  {
+  
+        vetor [i]= rand() % 1000;
+        printf("%i ", vetor[i]);
+    }
+ printf("\n\n");
+ 
+ 
+
+  
+//bubblesortsimples
+ 
+ for (i = 1; i < 1000; i++){
+
+ 
+     for (j = 0; j < 1000-i; j++)
+  {
+    
+
+   if(vetor[j]>vetor[j+1]) {
+       	
+       int x = vetor[j];
+       
+       vetor[j]= vetor[j+1];
+       
+       vetor[j+1]=x;
+    
+	   }  
+       
+    } 
+}
+ 
+ 
+ for(j=0; j<1000; j++)
+ 	printf("%i  ", vetor[j]); 
+ 
+ 
+ 
+ 
+ 
+ 	return 0;
+}
