@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <time.h>
+ 
+
+
+//Selecionando um item menor
+int selecioneMenor (int vetor[], int i, int n){
+	int j, k=i;
+	for(j = i+1; j<n; j++){
+		if(vetor[k] > vetor[j])
+		k = j;
+
+	
+	} 
+	return k;	
+}
+
+
+//Ordenação por seleção
+void selectionSort (int vetor[], int n ){
+int i, k, x;
+  for( i = 0; i < n-1; i++) {
+  	
+  	k = selecioneMenor (vetor, i, n);
+    x = vetor[i];
+    vetor[i] = vetor[k];
+    vetor[k]= x;
+  }
+  
+}
+
+
+
+
+int main()
+ {
+ setlocale(LC_ALL, "Portuguese"); 
+ 
+ int vetor [1000];
+ int i;
+ int n = 1000;
+ 
+ srand(time(NULL));
+ 
+ for (i = 0; i < 1000; i++)
+  {
+  
+        vetor [i]= rand() % 1000;
+        printf("%i ", vetor[i]);
+    }
+ printf("\n\n");
+ 
+ 
+ 
+ selectionSort (vetor,n);
+ for (i = 0; i < 1000; i++)
+  {
+        printf("%i ", vetor[i]);
+    }
+
+ 
+ 	return 0;
+} 
+
